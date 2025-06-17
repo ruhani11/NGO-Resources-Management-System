@@ -26,15 +26,18 @@ A full-stack database management system to streamline resource handling for NGOs
 ---
 
 ## 📁 Project Structure
+
+```
 ngo-resources-management/
-├── app.py # Main Streamlit app
-├── db_config.py # MySQL DB connection function
-├── test_connection.py # Script to test database connectivity
-├── CreateDatabase.sql # SQL to create the database
-├── Script1.sql # Script to create volunteer table
-├── Script2.sql # Script to create inventory table
-├── Script3.sql # Script to create donation table
-├── README.md # Project documentation
+├── app.py              # Main Streamlit app
+├── db_config.py        # MySQL DB connection function
+├── test_connection.py  # Script to test database connectivity
+├── CreateDatabase.sql  # SQL to create the database
+├── Script1.sql         # Script to create volunteer table
+├── Script2.sql         # Script to create inventory table
+├── Script3.sql         # Script to create donation table
+└── README.md           # Project documentation
+```
 
 ---
 
