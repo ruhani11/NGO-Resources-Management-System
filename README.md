@@ -33,9 +33,9 @@ ngo-resources-management/
 ├── db_config.py        # MySQL DB connection function
 ├── test_connection.py  # Script to test database connectivity
 ├── CreateDatabase.sql  # SQL to create the database
-├── Script1.sql         # Script to create volunteer table
-├── Script2.sql         # Script to create inventory table
-├── Script3.sql         # Script to create donation table
+├── Script1.sql         # Script to create all tables
+├── Script2.sql         # Script to insert sample data
+├── Script3.sql         # Script to create stored procedures
 └── README.md           # Project documentation
 ```
 
@@ -48,19 +48,22 @@ ngo-resources-management/
 ```bash
 git clone https://github.com/ruhani11/NGO-Resources-Management-System
 cd ngo-resources-management
+```
 
-2. Set Up the MySQL Database
-Open MySQL Workbench
+### 2. Set Up the MySQL Database
 
-Run CreateDatabase.sql to create the database
+- Open **MySQL Workbench**
+- Run the following SQL scripts in order:
+  1. `CreateDatabase.sql` – to create the database
+  2. `Script1.sql` – to create all required tables
+  3. `Script2.sql` – to insert sample data
+  4. `Script3.sql` – to define stored procedures
 
-Run Script1.sql, Script2.sql, and Script3.sql to create the required tables
+### 3. Configure Database Connection
 
-3. Configure Database Connection
-Edit db_config.py to match your local MySQL credentials:
+Edit `db_config.py` to match your local MySQL credentials:
 
-python
-Copy code
+```python
 # db_config.py
 import mysql.connector
 
@@ -71,28 +74,41 @@ def get_connection():
         password="your_password",
         database="ngo_database"
     )
-4. Test Connection
-bash
-Copy code
+```
+
+### 4. Test Connection
+
+Run the following command to test the connection:
+
+```bash
 python test_connection.py
-If successful, you’ll see:
+```
 
-css
-Copy code
+If successful, you'll see:
+
+```
 ✅ Connected to MySQL!
-5. Launch the Application
-bash
-Copy code
+```
+
+### 5. Launch the Application
+
+Start the Streamlit app:
+
+```bash
 streamlit run app.py
+```
 
-📌 Future Enhancements
-📧 Email notifications to volunteers/donors
+---
 
-🗃️ Export data as Excel/PDF
+## 📌 Future Enhancements
 
-🧑‍💼 Admin login & role-based access
+- 📧 Email notifications to volunteers/donors  
+- 🗃️ Export data as Excel/PDF  
+- 🧑‍💼 Admin login & role-based access  
+- 📱 Mobile-friendly UI  
 
-📱 Mobile-friendly UI
+---
 
-🤝 Contributing
+## 🤝 Contributing
+
 Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
